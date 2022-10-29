@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+void TargetNum(int nums[], int target, int width, int &index1, int &index2)
+{
+int i, j;
+index1 = -1;
+index2 = -1;
+for(i=0; i<width-1; i++
+{
+for(j=i+1; j<width; j++)
+{
+if( (nums[i]+nums[j]) == target)
+{
+index1 = i;
+index2 = j;
+break;
+}
+}
+}
+}
+int main()
+{
+int nums[] = {2, 7, 11, 15};
+int idx1, idx2;
+TargetNum(nums, 9, 5, idx1, idx2);
+cout << "\n\nTarget is obtained using indices: [" << idx1 << ", " << idx2 <<"] \n\n";
+return 0;
+}
